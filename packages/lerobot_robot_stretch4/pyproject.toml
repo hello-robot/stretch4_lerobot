@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lerobot_robot_stretch4"
+version = "0.1.0"
+description = "LeRobot robot plugin for Hello Robot Stretch 4"
+requires-python = ">=3.12"
+license = { text = "Apache-2.0" }
+# stretch4_body and depthai come from the robot's system python (venv --system-site-packages).
+dependencies = [
+    "lerobot[dataset]>=0.6.0,<0.7", 
+    "gTTS",
+    "lerobot_camera_oak",
+    "numpy",
+]
+
+[project.scripts]
+stretch4_say = "lerobot_robot_stretch4.voice:main"
+stretch4_pick_cameras = "lerobot_robot_stretch4.pick_cameras:main"
+stretch4_pose = "lerobot_robot_stretch4.pose:main"
+stretch4_push_dataset = "lerobot_robot_stretch4.push_dataset:main"
+stretch4_fix_stats = "lerobot_robot_stretch4.prepare_dataset:main"
+stretch4_policy_server = "lerobot_robot_stretch4.policy_server:main"
+stretch4_rollout = "lerobot_robot_stretch4.rollout:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

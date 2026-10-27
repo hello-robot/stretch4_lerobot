@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lerobot_teleoperator_stretch4"
+version = "0.1.0"
+description = "LeRobot teleoperator plugin for Hello Robot Stretch 4 (passive observer)"
+requires-python = ">=3.12"
+license = { text = "Apache-2.0" }
+dependencies = [
+    "lerobot>=0.6.0,<0.7",
+    "lerobot_robot_stretch4",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

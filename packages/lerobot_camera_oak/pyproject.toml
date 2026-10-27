@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lerobot_camera_oak"
+version = "0.1.0"
+description = "LeRobot camera plugin for the Hello Robot Stretch 4 OAK cameras (head stereo pair, gripper)"
+requires-python = ">=3.12"
+license = { text = "Apache-2.0" }
+# stretch4_body and depthai come from the robot's system python (venv --system-site-packages).
+dependencies = [
+    "lerobot>=0.6.0,<0.7",
+    "numpy",
+    "opencv-python>=4.10",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
