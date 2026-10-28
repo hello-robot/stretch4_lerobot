@@ -82,14 +82,14 @@ python -c "import stretch4_body, depthai, lerobot, lerobot_robot_stretch4; print
 
 ## Teleoperation
 
-Demonstrations are recorded while you drive the robot with a teleop device, run as its own process alongside `lerobot-record` (see [Collecting and Preparing Data](docs/1-collecting-and-preparing-data.md)). Supported devices:
+Demonstrations are recorded while you drive the robot with a teleop device, run as its own process alongside `lerobot-record` (see [Collecting and Preparing Data](docs/1-collecting-and-preparing-data.md)). Each device suits a different kind of task, so pick the one that matches the motions in your demonstrations:
 
-| Device | How to run it |
-|---|---|
-| **Gamepad** | Run `stretch_gamepad_teleop` on the robot |
-| **Stretch Dex Teleop** | See [stretch4_dex_teleop](https://github.com/hello-robot/stretch4_dex_teleop.git) |
-| **Meta Quest 3** | See [stretch4_quest_teleop](https://github.com/hello-robot/stretch4_quest_teleop) |
-| **Puppet Teleop** | See [Puppet Teleop primer](https://docs.hello-robot.com/stretch4-body-repo/teleoperation/primer_puppet_teleop) |
+| Device | Best suited for | Keep in mind | How to run it |
+|---|---|---|---|
+| **Gamepad** | Getting started quickly with no extra hardware; precise, one-joint-at-a-time control | Joints are commanded separately, so motions that need the base and wrist to move together (e.g. opening a fridge door) take more practice | Run `stretch_gamepad_teleop` on the robot |
+| **Stretch Dex Teleop** | Tasks that coordinate wrist rotation with base rotation | Designed for a stationary setup: the base rotates in place rather than driving around | See [stretch4_dex_teleop](https://github.com/hello-robot/stretch4_dex_teleop.git) |
+| **Meta Quest 3** | Natural wrist motion — the robot's wrist follows your hand (except wrist roll), with the base driven separately | The headset can get tiring during longer recording sessions | See [stretch4_quest_teleop](https://github.com/hello-robot/stretch4_quest_teleop) |
+| **Puppet Teleop** | The most intuitive option: moving the puppet moves the robot the same way, so whole-body motions like coordinated base + wrist work best here | Requires a second (puppet) robot | See [Puppet Teleop primer](https://docs.hello-robot.com/stretch4-body-repo/teleoperation/primer_puppet_teleop) |
 
 ---
 
